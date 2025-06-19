@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snake Race</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🐍 Snake Race</h1>
+    <div class="score-board">
+      <div class="score-container player-score">
+        Player: <span id="playerScore">0</span>/15
+        <div class="progress-bar">
+          <div id="playerProgress" class="progress-fill player-progress" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="score-container ai-score">
+        AI: <span id="aiScore">0</span>/15
+        <div class="progress-bar">
+          <div id="aiProgress" class="progress-fill ai-progress" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+    <canvas id="gameCanvas" width="1200" height="600"></canvas>
+    <div class="game-info">
+  <div class="controls-section">
+    <h3>🎮 Controls</h3>
+    <div class="control-buttons">
+      <div class="control-group">
+        <div class="control-btn">W</div>
+        <div class="control-label">Up</div>
+      </div>
+      <div class="control-group">
+        <div class="control-btn">A</div>
+        <div class="control-label">Left</div>
+      </div>
+      <div class="control-group">
+        <div class="control-btn">S</div>
+        <div class="control-label">Down</div>
+      </div>
+      <div class="control-group">
+        <div class="control-btn">D</div>
+        <div class="control-label">Right</div>
+      </div>
+      <div class="control-separator">OR</div>
+      <div class="control-group">
+        <div class="control-btn arrow">↑</div>
+        <div class="control-btn arrow">←</div>
+        <div class="control-btn arrow">↓</div>
+        <div class="control-btn arrow">→</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="game-objectives">
+    <h3>🎯 Game Objective</h3>
+    <p>🟢 <strong>You (Green Snake)</strong> vs 🔴 <strong>AI (Red Snake)</strong></p>
+    <p>First player to win <strong>3 rounds</strong> wins the game!</p>
+    <p>Each round: First to eat <strong>15 fruits</strong> wins the round!</p>
+  </div>
+  
+  <div class="powerups-info">
+    <h3>⚡ Power-ups & Items</h3>
+    <div class="powerup-grid">
+      <div class="powerup-item">
+        <div class="powerup-icon fruit">🍎</div>
+        <div class="powerup-desc">
+          <strong>Fruit</strong><br>
+          Grow your snake & score points
+        </div>
+      </div>
+      <div class="powerup-item">
+        <div class="powerup-icon lightning">⚡</div>
+        <div class="powerup-desc">
+          <strong>Lightning Boost</strong><br>
+          Double speed for 5 seconds
+        </div>
+      </div>
+      <div class="powerup-item">
+        <div class="powerup-icon poison">☠️</div>
+        <div class="powerup-desc">
+          <strong>Poison</strong><br>
+          Shrink opponent's snake & score
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="game-over" id="gameOver">
+    <div class="game-over-content">
+      <div id="gameResult"></div>
+      <button class="restart-btn" onclick="restartGame()">🎮 Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
